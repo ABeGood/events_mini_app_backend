@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
 
@@ -24,14 +24,21 @@ def health_check():
         "message": "Flask backend is running on Railway!"
     })
 
-@app.route('/api/message', methods=['GET'])
+@app.route('/api/message', methods=['GET', 'OPTIONS'])  # ✅ Explicitly handle OPTIONS
 def get_message():
     """Main endpoint that returns a simple message"""
+    if request.method == 'OPTIONS':
+        # Handle preflight request
+        print("🔍 Handling OPTIONS preflight request")
+        return '', 200
+    
+    print("✅ Handling GET request")
     return jsonify({
         "message": "Hello from Flask backend on Railway! 🚀",
         "status": "success",
         "timestamp": "2025-06-21",
-        "service": "telegram-mini-app-backend"
+        "service": "telegram-mini-app-backend",
+        "request_origin": request.headers.get('Origin')
     })
 
 @app.route('/api/events', methods=['GET'])
