@@ -9,7 +9,10 @@ CORS(app, origins=[
     "https://web.telegram.org",
     "https://*.telegram.org",
     "https://tg.dev",
-    "http://localhost:3000"  # For local development
+    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://localhost:4173",
 ])
 
 @app.route('/')
