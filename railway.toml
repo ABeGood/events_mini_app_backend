@@ -1,5 +1,6 @@
 [build]
 builder = "dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 healthcheckPath = "/"
@@ -7,10 +8,6 @@ healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
 
-[[deploy.environmentVariables]]
-name = "PORT"
-value = "8000"
-
-[[deploy.environmentVariables]]
-name = "FLASK_ENV"
-value = "production"
+[env]
+PORT = "8000"
+FLASK_ENV = "production"

@@ -2,17 +2,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy requirements first for better caching
-COPY requirements.txt .
+# Copy requirements from backend folder
+COPY backend/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy only backend code
+COPY backend/ .
 
 # Expose port
 EXPOSE $PORT
 
-# Use gunicorn for production
+# Run the app (adjust based on your main file)
 CMD gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 app:app
