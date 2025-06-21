@@ -13,6 +13,7 @@ CORS(app, origins=[
     "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost:4173",
+    "https://abegood.github.io/events_mini_app/"
 ])
 
 @app.route('/')
