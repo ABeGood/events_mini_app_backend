@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d338c102d0f38ee6aa39abe55c9877fb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d338c102d0f38ee6aa39abe55c9877fb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d338c102d0f38ee6aa39abe55c9877fb = L.map(
+                "map_d338c102d0f38ee6aa39abe55c9877fb",
+                {
+                    center: [49.8583685, 15.6120225],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4ac6ddb0ac8fc620d6575e5dc3e8d94d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4ac6ddb0ac8fc620d6575e5dc3e8d94d.addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var marker_0aa72d2a9cd6e0ec4ee4f21182534f5b = L.marker(
+                [50.37213, 15.63527],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_8575742a96c8414e3bca646e9dd84efc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8bff7d9cd540ad0d03ec638b5ccec50f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3529996f94e809f521fab7010bf76dc2 = $(`<div id="html_3529996f94e809f521fab7010bf76dc2" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">The Legends Rock Fest</h4>             <p><strong>📅 Date:</strong> July 18, 2025</p>             <p><strong>📍 Venue:</strong> Areál Zahrada</p>             <p><strong>🏙️ Location:</strong> Hořice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/the-legends-rock-fest-tickets/52077?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_8bff7d9cd540ad0d03ec638b5ccec50f.setContent(html_3529996f94e809f521fab7010bf76dc2);
+            
+        
+
+        marker_0aa72d2a9cd6e0ec4ee4f21182534f5b.bindPopup(popup_8bff7d9cd540ad0d03ec638b5ccec50f)
+        ;
+
+        
+    
+    
+            marker_0aa72d2a9cd6e0ec4ee4f21182534f5b.bindTooltip(
+                `<div>
+                     The Legends Rock Fest - July 18, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0aa72d2a9cd6e0ec4ee4f21182534f5b.setIcon(icon_8575742a96c8414e3bca646e9dd84efc);
+            
+    
+            var marker_b51d01fb565b5541e13af921b5c7902e = L.marker(
+                [50.12905, 14.5268],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_c381fccfb7675c7f119a4fb22d007cc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1bfa2f32eb4263f1c25ab44c3291bc40 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_88ced4334d883e8c3a406dff6d0b642e = $(`<div id="html_88ced4334d883e8c3a406dff6d0b642e" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">IMAGINE DRAGONS: LOOM World Tour - Baggage Storage</h4>             <p><strong>📅 Date:</strong> June 09, 2025</p>             <p><strong>📍 Venue:</strong> Úschovna - Letiště Letňany</p>             <p><strong>🏙️ Location:</strong> Prague, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-baggage-storage-tickets/51545?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_1bfa2f32eb4263f1c25ab44c3291bc40.setContent(html_88ced4334d883e8c3a406dff6d0b642e);
+            
+        
+
+        marker_b51d01fb565b5541e13af921b5c7902e.bindPopup(popup_1bfa2f32eb4263f1c25ab44c3291bc40)
+        ;
+
+        
+    
+    
+            marker_b51d01fb565b5541e13af921b5c7902e.bindTooltip(
+                `<div>
+                     IMAGINE DRAGONS: LOOM World Tour - Baggage Storage - June 09, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b51d01fb565b5541e13af921b5c7902e.setIcon(icon_c381fccfb7675c7f119a4fb22d007cc7);
+            
+    
+            var marker_704aa9a54a95eeb9b53598dbe46b29df = L.marker(
+                [50.12905, 14.5268],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_320264622a5b7d567bd54c5637c1fbe2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c1d6f85820a6f36fa82508e81fc6f83 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4cd798a9d2e4ef0e50ec40ef7bcb9b6a = $(`<div id="html_4cd798a9d2e4ef0e50ec40ef7bcb9b6a" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">IMAGINE DRAGONS: LOOM World Tour - Baggage Storage</h4>             <p><strong>📅 Date:</strong> June 11, 2025</p>             <p><strong>📍 Venue:</strong> Úschovna - Letiště Letňany</p>             <p><strong>🏙️ Location:</strong> Prague, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-baggage-storage-tickets/51579?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_0c1d6f85820a6f36fa82508e81fc6f83.setContent(html_4cd798a9d2e4ef0e50ec40ef7bcb9b6a);
+            
+        
+
+        marker_704aa9a54a95eeb9b53598dbe46b29df.bindPopup(popup_0c1d6f85820a6f36fa82508e81fc6f83)
+        ;
+
+        
+    
+    
+            marker_704aa9a54a95eeb9b53598dbe46b29df.bindTooltip(
+                `<div>
+                     IMAGINE DRAGONS: LOOM World Tour - Baggage Storage - June 11, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_704aa9a54a95eeb9b53598dbe46b29df.setIcon(icon_320264622a5b7d567bd54c5637c1fbe2);
+            
+    
+            var marker_f449cdf0c58daca46b0634a56837e907 = L.marker(
+                [50.1279, 14.51512],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_05adbd5db86f80b5ce91dad447f08faa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d170adb8873410a681fce3cbc68c8560 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_047977ec0b702ca82226069dd13411c2 = $(`<div id="html_047977ec0b702ca82226069dd13411c2" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">IMAGINE DRAGONS: LOOM World Tour</h4>             <p><strong>📅 Date:</strong> June 09, 2025</p>             <p><strong>📍 Venue:</strong> Letiště Praha Letňany</p>             <p><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-tickets/51645?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_d170adb8873410a681fce3cbc68c8560.setContent(html_047977ec0b702ca82226069dd13411c2);
+            
+        
+
+        marker_f449cdf0c58daca46b0634a56837e907.bindPopup(popup_d170adb8873410a681fce3cbc68c8560)
+        ;
+
+        
+    
+    
+            marker_f449cdf0c58daca46b0634a56837e907.bindTooltip(
+                `<div>
+                     IMAGINE DRAGONS: LOOM World Tour - June 09, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f449cdf0c58daca46b0634a56837e907.setIcon(icon_05adbd5db86f80b5ce91dad447f08faa);
+            
+    
+            var marker_afbca411687e04cf9e19dc70b1cb75c4 = L.marker(
+                [50.1279, 14.51512],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_fa0736a8416a0f835e8a5b0c2a94bc32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47e671c8e8bb76a0d7ef330789e32a37 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5469b1bc9f3af96f58b8a681a38248af = $(`<div id="html_5469b1bc9f3af96f58b8a681a38248af" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">IMAGINE DRAGONS: LOOM World Tour</h4>             <p><strong>📅 Date:</strong> June 11, 2025</p>             <p><strong>📍 Venue:</strong> Letiště Praha Letňany</p>             <p><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-tickets/51647?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_47e671c8e8bb76a0d7ef330789e32a37.setContent(html_5469b1bc9f3af96f58b8a681a38248af);
+            
+        
+
+        marker_afbca411687e04cf9e19dc70b1cb75c4.bindPopup(popup_47e671c8e8bb76a0d7ef330789e32a37)
+        ;
+
+        
+    
+    
+            marker_afbca411687e04cf9e19dc70b1cb75c4.bindTooltip(
+                `<div>
+                     IMAGINE DRAGONS: LOOM World Tour - June 11, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_afbca411687e04cf9e19dc70b1cb75c4.setIcon(icon_fa0736a8416a0f835e8a5b0c2a94bc32);
+            
+    
+            var marker_f061b1fc76552ff15a211344ef871034 = L.marker(
+                [50.09143, 14.45481],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_3361cf3f4b88df176195c428b7389088 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07893b164251f68521dd9a8ddd6f48ae = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0f084c11b59b0e2f862d619390c2852b = $(`<div id="html_0f084c11b59b0e2f862d619390c2852b" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">ONE OK ROCK - DETOX EUROPEAN TOUR 2025</h4>             <p><strong>📅 Date:</strong> October 29, 2025</p>             <p><strong>📍 Venue:</strong> Forum Karlín</p>             <p><strong>🏙️ Location:</strong> Praha 8, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/one-ok-rock-detox-european-tour-2025-tickets/1673302314?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_07893b164251f68521dd9a8ddd6f48ae.setContent(html_0f084c11b59b0e2f862d619390c2852b);
+            
+        
+
+        marker_f061b1fc76552ff15a211344ef871034.bindPopup(popup_07893b164251f68521dd9a8ddd6f48ae)
+        ;
+
+        
+    
+    
+            marker_f061b1fc76552ff15a211344ef871034.bindTooltip(
+                `<div>
+                     ONE OK ROCK - DETOX EUROPEAN TOUR 2025 - October 29, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f061b1fc76552ff15a211344ef871034.setIcon(icon_3361cf3f4b88df176195c428b7389088);
+            
+    
+            var marker_dfa096966db4b936db0f4da6f59a28f9 = L.marker(
+                [50.09143, 14.45481],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_4185804517974eb3ee86f88d1f1a5ac7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aee5920c5a020c3400036292d32f8b58 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_baa66e294b3fe3ef1edbb241a0d4d887 = $(`<div id="html_baa66e294b3fe3ef1edbb241a0d4d887" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">FOREVER - The Best Show about KING OF POP</h4>             <p><strong>📅 Date:</strong> November 28, 2025</p>             <p><strong>📍 Venue:</strong> Forum Karlín</p>             <p><strong>🏙️ Location:</strong> Praha 8, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/forever-the-best-show-about-king-of-pop-tickets/1059593672?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_aee5920c5a020c3400036292d32f8b58.setContent(html_baa66e294b3fe3ef1edbb241a0d4d887);
+            
+        
+
+        marker_dfa096966db4b936db0f4da6f59a28f9.bindPopup(popup_aee5920c5a020c3400036292d32f8b58)
+        ;
+
+        
+    
+    
+            marker_dfa096966db4b936db0f4da6f59a28f9.bindTooltip(
+                `<div>
+                     FOREVER - The Best Show about KING OF POP - November 28, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfa096966db4b936db0f4da6f59a28f9.setIcon(icon_4185804517974eb3ee86f88d1f1a5ac7);
+            
+    
+            var marker_5707a8e5b9d0a6c1b97b004e181bca4d = L.marker(
+                [50.24731, 15.83717],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_76501b3e05de4b7343232ede959b2c53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deb6684c65a93bee9d5a5bd08e24f426 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_291b1785ff2db1b0bb346cf7a1ac1fe4 = $(`<div id="html_291b1785ff2db1b0bb346cf7a1ac1fe4" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">Rock for People 2025 (11. - 15. 6. 2025)</h4>             <p><strong>📅 Date:</strong> June 11, 2025</p>             <p><strong>📍 Venue:</strong> Park 360</p>             <p><strong>🏙️ Location:</strong> Hradec Králové, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/rock-for-people-2025-11-15-6-2025--tickets/294722450?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_deb6684c65a93bee9d5a5bd08e24f426.setContent(html_291b1785ff2db1b0bb346cf7a1ac1fe4);
+            
+        
+
+        marker_5707a8e5b9d0a6c1b97b004e181bca4d.bindPopup(popup_deb6684c65a93bee9d5a5bd08e24f426)
+        ;
+
+        
+    
+    
+            marker_5707a8e5b9d0a6c1b97b004e181bca4d.bindTooltip(
+                `<div>
+                     Rock for People 2025 (11. - 15. 6. 2025) - June 11, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5707a8e5b9d0a6c1b97b004e181bca4d.setIcon(icon_76501b3e05de4b7343232ede959b2c53);
+            
+    
+            var marker_fb845bf07e174f4a7644e9695c585156 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_3415f4015f3e73a217ed23f0e0367781 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18bc0cf4f5e534d9c839ed108130b732 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_823b1a285851b53e018fa0040ee14875 = $(`<div id="html_823b1a285851b53e018fa0040ee14875" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK 2025 - THURSDAY 10. 7. 2025</h4>             <p><strong>📅 Date:</strong> July 10, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-thursday-10-7-2025-tickets/661327157?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_18bc0cf4f5e534d9c839ed108130b732.setContent(html_823b1a285851b53e018fa0040ee14875);
+            
+        
+
+        marker_fb845bf07e174f4a7644e9695c585156.bindPopup(popup_18bc0cf4f5e534d9c839ed108130b732)
+        ;
+
+        
+    
+    
+            marker_fb845bf07e174f4a7644e9695c585156.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK 2025 - THURSDAY 10. 7. 2025 - July 10, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb845bf07e174f4a7644e9695c585156.setIcon(icon_3415f4015f3e73a217ed23f0e0367781);
+            
+    
+            var marker_f45cad854406955d00c0d2973fffdec7 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_1da067183c97527c5331151b17c7014b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48f0025fe73dd7d8fed78dae542bd2ed = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f2544a48f746b2167ea28ab96f102a8f = $(`<div id="html_f2544a48f746b2167ea28ab96f102a8f" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK 2025 - FRIDAY 11. 7. 2025</h4>             <p><strong>📅 Date:</strong> July 11, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-friday-11-7-2025-tickets/356137205?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_48f0025fe73dd7d8fed78dae542bd2ed.setContent(html_f2544a48f746b2167ea28ab96f102a8f);
+            
+        
+
+        marker_f45cad854406955d00c0d2973fffdec7.bindPopup(popup_48f0025fe73dd7d8fed78dae542bd2ed)
+        ;
+
+        
+    
+    
+            marker_f45cad854406955d00c0d2973fffdec7.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK 2025 - FRIDAY 11. 7. 2025 - July 11, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f45cad854406955d00c0d2973fffdec7.setIcon(icon_1da067183c97527c5331151b17c7014b);
+            
+    
+            var marker_1b48a570641b09a0b4c9ca03e07b0987 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_e4e3726a28bf8cd6509cd4b7f6ec87a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1238a83dc8a77c3974aa1f56217a2b5c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_301a06edf64c2f5c5b801ff37382c062 = $(`<div id="html_301a06edf64c2f5c5b801ff37382c062" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK 2025 - SATURDAY 12. 7. 2025</h4>             <p><strong>📅 Date:</strong> July 12, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-saturday-12-7-2025-tickets/2099111542?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_1238a83dc8a77c3974aa1f56217a2b5c.setContent(html_301a06edf64c2f5c5b801ff37382c062);
+            
+        
+
+        marker_1b48a570641b09a0b4c9ca03e07b0987.bindPopup(popup_1238a83dc8a77c3974aa1f56217a2b5c)
+        ;
+
+        
+    
+    
+            marker_1b48a570641b09a0b4c9ca03e07b0987.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK 2025 - SATURDAY 12. 7. 2025 - July 12, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1b48a570641b09a0b4c9ca03e07b0987.setIcon(icon_e4e3726a28bf8cd6509cd4b7f6ec87a2);
+            
+    
+            var marker_78ee695341d968bd63553b252ff4b8f3 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_2498316194d2bf2eabc97e173bc58e46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9ce4756d97483e2bc95d57fcc52eeb4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c91ebcd03a6432420065a13c5365b1ed = $(`<div id="html_c91ebcd03a6432420065a13c5365b1ed" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK 2025 - SUNDAY 13. 7. 2025</h4>             <p><strong>📅 Date:</strong> July 13, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-sunday-13-7-2025-tickets/619443915?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_c9ce4756d97483e2bc95d57fcc52eeb4.setContent(html_c91ebcd03a6432420065a13c5365b1ed);
+            
+        
+
+        marker_78ee695341d968bd63553b252ff4b8f3.bindPopup(popup_c9ce4756d97483e2bc95d57fcc52eeb4)
+        ;
+
+        
+    
+    
+            marker_78ee695341d968bd63553b252ff4b8f3.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK 2025 - SUNDAY 13. 7. 2025 - July 13, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_78ee695341d968bd63553b252ff4b8f3.setIcon(icon_2498316194d2bf2eabc97e173bc58e46);
+            
+    
+            var marker_69f5cf96ef1f2131d5910bd425e9503b = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_d7861e885667e24f7da9660e2f511a0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f94a7a777565c24f8fc3f3b9c6e0339 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_51842998131241e0719784f5b5407304 = $(`<div id="html_51842998131241e0719784f5b5407304" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass</h4>             <p><strong>📅 Date:</strong> July 13, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-10-7-13-7-2025-festival-pass-tickets/1443315857?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_3f94a7a777565c24f8fc3f3b9c6e0339.setContent(html_51842998131241e0719784f5b5407304);
+            
+        
+
+        marker_69f5cf96ef1f2131d5910bd425e9503b.bindPopup(popup_3f94a7a777565c24f8fc3f3b9c6e0339)
+        ;
+
+        
+    
+    
+            marker_69f5cf96ef1f2131d5910bd425e9503b.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass - July 13, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_69f5cf96ef1f2131d5910bd425e9503b.setIcon(icon_d7861e885667e24f7da9660e2f511a0e);
+            
+    
+            var marker_2a09981ae89a1299ace685be68f7017d = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_5dd1633f67bce9530bade16db4bd3889 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc47b9f0b48202c616c1f50562e29564 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aa3ba172ef1dbe6940b0facbe929ff9d = $(`<div id="html_aa3ba172ef1dbe6940b0facbe929ff9d" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass - SEATING</h4>             <p><strong>📅 Date:</strong> July 13, 2025</p>             <p><strong>📍 Venue:</strong> likérka R.Jelínka</p>             <p><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/masters-of-rock-10-7-13-7-2025-festival-pass-seating-tickets/1132177842?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_bc47b9f0b48202c616c1f50562e29564.setContent(html_aa3ba172ef1dbe6940b0facbe929ff9d);
+            
+        
+
+        marker_2a09981ae89a1299ace685be68f7017d.bindPopup(popup_bc47b9f0b48202c616c1f50562e29564)
+        ;
+
+        
+    
+    
+            marker_2a09981ae89a1299ace685be68f7017d.bindTooltip(
+                `<div>
+                     MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass - SEATING - July 13, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a09981ae89a1299ace685be68f7017d.setIcon(icon_5dd1633f67bce9530bade16db4bd3889);
+            
+    
+            var marker_270f749a35448ce736fdbe45b3a9d2e6 = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_3159ba8445a424bebec5a977c40f4f71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c6316e94b09df15b4be6a35eb1a8fcb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_862431a8dba69102f6d78ba6c10c62fd = $(`<div id="html_862431a8dba69102f6d78ba6c10c62fd" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">Disturbed: The Sickness 25th Anniversary Tour</h4>             <p><strong>📅 Date:</strong> October 07, 2025</p>             <p><strong>📍 Venue:</strong> O2 Arena</p>             <p><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-tickets/1133673032?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_8c6316e94b09df15b4be6a35eb1a8fcb.setContent(html_862431a8dba69102f6d78ba6c10c62fd);
+            
+        
+
+        marker_270f749a35448ce736fdbe45b3a9d2e6.bindPopup(popup_8c6316e94b09df15b4be6a35eb1a8fcb)
+        ;
+
+        
+    
+    
+            marker_270f749a35448ce736fdbe45b3a9d2e6.bindTooltip(
+                `<div>
+                     Disturbed: The Sickness 25th Anniversary Tour - October 07, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_270f749a35448ce736fdbe45b3a9d2e6.setIcon(icon_3159ba8445a424bebec5a977c40f4f71);
+            
+    
+            var marker_ea958cd11211f52d8cc57d071b9556ce = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_01873e8ed08db8582c962ffe61d61f24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bacb2c752f9667ea8a8f8188438615c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ade41cb894a4141e7f42e87e993dfada = $(`<div id="html_ade41cb894a4141e7f42e87e993dfada" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">Disturbed: The Sickness 25th Anniversary Tour | Enhanced Experiences</h4>             <p><strong>📅 Date:</strong> October 07, 2025</p>             <p><strong>📍 Venue:</strong> O2 Arena</p>             <p><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-%7C-enhanced-experiences-tickets/1502218305?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_2bacb2c752f9667ea8a8f8188438615c.setContent(html_ade41cb894a4141e7f42e87e993dfada);
+            
+        
+
+        marker_ea958cd11211f52d8cc57d071b9556ce.bindPopup(popup_2bacb2c752f9667ea8a8f8188438615c)
+        ;
+
+        
+    
+    
+            marker_ea958cd11211f52d8cc57d071b9556ce.bindTooltip(
+                `<div>
+                     Disturbed: The Sickness 25th Anniversary Tour | Enhanced Experiences - October 07, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea958cd11211f52d8cc57d071b9556ce.setIcon(icon_01873e8ed08db8582c962ffe61d61f24);
+            
+    
+            var marker_c8df0fe11374f82573ffa67b90254eb5 = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_76916a229281aa44b5ac0d3c2faa0ab9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74d514647de6c208863307d405afbb6f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c5873cc7c3709bc9e97cb93fbcad9106 = $(`<div id="html_c5873cc7c3709bc9e97cb93fbcad9106" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">Disturbed: The Sickness 25th Anniversary Tour | Megadeth Packages</h4>             <p><strong>📅 Date:</strong> October 07, 2025</p>             <p><strong>📍 Venue:</strong> O2 Arena</p>             <p><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-%7C-megadeth-packages-tickets/1882232376?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_74d514647de6c208863307d405afbb6f.setContent(html_c5873cc7c3709bc9e97cb93fbcad9106);
+            
+        
+
+        marker_c8df0fe11374f82573ffa67b90254eb5.bindPopup(popup_74d514647de6c208863307d405afbb6f)
+        ;
+
+        
+    
+    
+            marker_c8df0fe11374f82573ffa67b90254eb5.bindTooltip(
+                `<div>
+                     Disturbed: The Sickness 25th Anniversary Tour | Megadeth Packages - October 07, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8df0fe11374f82573ffa67b90254eb5.setIcon(icon_76916a229281aa44b5ac0d3c2faa0ab9);
+            
+    
+            var marker_46a95da468dbef81838dd6410ba3d444 = L.marker(
+                [50.08195, 14.41848],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_ca0c4f57ebc40e854b206aa272a01f56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ee9d7c261be00d973608609f220dd98 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_426f1ed05c3f5c3e2d07df6ed924079c = $(`<div id="html_426f1ed05c3f5c3e2d07df6ed924079c" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">ROYA</h4>             <p><strong>📅 Date:</strong> November 20, 2025</p>             <p><strong>📍 Venue:</strong> Rock Café</p>             <p><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/roya-tickets/287961223?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_1ee9d7c261be00d973608609f220dd98.setContent(html_426f1ed05c3f5c3e2d07df6ed924079c);
+            
+        
+
+        marker_46a95da468dbef81838dd6410ba3d444.bindPopup(popup_1ee9d7c261be00d973608609f220dd98)
+        ;
+
+        
+    
+    
+            marker_46a95da468dbef81838dd6410ba3d444.bindTooltip(
+                `<div>
+                     ROYA - November 20, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46a95da468dbef81838dd6410ba3d444.setIcon(icon_ca0c4f57ebc40e854b206aa272a01f56);
+            
+    
+            var marker_0c3551bfd3f3af0e7ebd238cb2e5b6e0 = L.marker(
+                [50.08195, 14.41848],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_26557660f187705933a1aefdd6f2e8b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18c14cdee2834e03ddd74baa5db9ca22 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8b690b5aa5a190c5679fe9ffc3956d63 = $(`<div id="html_8b690b5aa5a190c5679fe9ffc3956d63" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">MICO</h4>             <p><strong>📅 Date:</strong> November 29, 2025</p>             <p><strong>📍 Venue:</strong> Rock Café</p>             <p><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/mico-tickets/117198320?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_18c14cdee2834e03ddd74baa5db9ca22.setContent(html_8b690b5aa5a190c5679fe9ffc3956d63);
+            
+        
+
+        marker_0c3551bfd3f3af0e7ebd238cb2e5b6e0.bindPopup(popup_18c14cdee2834e03ddd74baa5db9ca22)
+        ;
+
+        
+    
+    
+            marker_0c3551bfd3f3af0e7ebd238cb2e5b6e0.bindTooltip(
+                `<div>
+                     MICO - November 29, 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c3551bfd3f3af0e7ebd238cb2e5b6e0.setIcon(icon_26557660f187705933a1aefdd6f2e8b7);
+            
+    
+            var marker_d849cd11e49e63d7e593a6af907ecbfa = L.marker(
+                [50.0814, 14.42528],
+                {
+}
+            ).addTo(map_d338c102d0f38ee6aa39abe55c9877fb);
+        
+    
+            var icon_cb441d7f00b7c5b8b53ce248ed74455c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "music",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a97f215532a874c40d6cf73b41702727 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c784f7816d3fde2dab142ffa44494f80 = $(`<div id="html_c784f7816d3fde2dab142ffa44494f80" style="width: 100.0%; height: 100.0%;">         <div style="width: 300px;">             <h4 style="color: #2E86C1; margin-bottom: 10px;">Blossoms</h4>             <p><strong>📅 Date:</strong> February 06, 2026</p>             <p><strong>📍 Venue:</strong> Lucerna Music Bar</p>             <p><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>             <p><a href="https://www.ticketmaster.cz/event/blossoms-tickets/2080354066?language=en-us" target="_blank">🎫 Buy Tickets</a></p>         </div>         </div>`)[0];
+                popup_a97f215532a874c40d6cf73b41702727.setContent(html_c784f7816d3fde2dab142ffa44494f80);
+            
+        
+
+        marker_d849cd11e49e63d7e593a6af907ecbfa.bindPopup(popup_a97f215532a874c40d6cf73b41702727)
+        ;
+
+        
+    
+    
+            marker_d849cd11e49e63d7e593a6af907ecbfa.bindTooltip(
+                `<div>
+                     Blossoms - February 06, 2026
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d849cd11e49e63d7e593a6af907ecbfa.setIcon(icon_cb441d7f00b7c5b8b53ce248ed74455c);
+            
+</script>
+</html>

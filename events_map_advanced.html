@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f7679ba877d4dab597da57d17e7a7b9a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f7679ba877d4dab597da57d17e7a7b9a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f7679ba877d4dab597da57d17e7a7b9a = L.map(
+                "map_f7679ba877d4dab597da57d17e7a7b9a",
+                {
+                    center: [49.8583685, 15.6120225],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e8d333a7dd7b57ab39937e8f508abd4 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0e8d333a7dd7b57ab39937e8f508abd4.addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+        
+    
+            var tile_layer_fc1648421d430dd3c2913cbc47af4ff3 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e \u0026mdash; Map data \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fc1648421d430dd3c2913cbc47af4ff3.addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+        
+    
+            var tile_layer_4ee2ec17a5050e3e4fa12bc3aea01709 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4ee2ec17a5050e3e4fa12bc3aea01709.addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+        
+    
+            var marker_cluster_355c53c616129ac9d12b711e1bc8dadd = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_564addfe2242368cc61363c4996dd98a = L.marker(
+                [50.37213, 15.63527],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_16d74420a7a5b8e08b9484b1c6f2ea37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36202716553faeb0ac1d72e33e06a105 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_29c00a9a1dc43a7039e6862b219d6a64 = $(`<div id="html_29c00a9a1dc43a7039e6862b219d6a64" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">The Legends Rock Fest</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 18, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Areál Zahrada</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Hořice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.3721, 15.6353</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/the-legends-rock-fest-tickets/52077?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_36202716553faeb0ac1d72e33e06a105.setContent(html_29c00a9a1dc43a7039e6862b219d6a64);
+            
+        
+
+        marker_564addfe2242368cc61363c4996dd98a.bindPopup(popup_36202716553faeb0ac1d72e33e06a105)
+        ;
+
+        
+    
+    
+            marker_564addfe2242368cc61363c4996dd98a.bindTooltip(
+                `<div>
+                     Click for details: The Legends Rock Fest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_564addfe2242368cc61363c4996dd98a.setIcon(icon_16d74420a7a5b8e08b9484b1c6f2ea37);
+            
+    
+            var marker_435a9464871c76ce1268b1d7d5646f2a = L.marker(
+                [50.12905, 14.5268],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_c1c9a3b5e029b8171d5f45b3f9d88f6e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c100a52d6056bf9a529bcdde1e65d9ec = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_abbf6b0f2c843fe524827b117b91c057 = $(`<div id="html_abbf6b0f2c843fe524827b117b91c057" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">IMAGINE DRAGONS: LOOM World Tour - Baggage Storage</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">June 09, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Úschovna - Letiště Letňany</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Prague, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1290, 14.5268</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-baggage-storage-tickets/51545?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_c100a52d6056bf9a529bcdde1e65d9ec.setContent(html_abbf6b0f2c843fe524827b117b91c057);
+            
+        
+
+        marker_435a9464871c76ce1268b1d7d5646f2a.bindPopup(popup_c100a52d6056bf9a529bcdde1e65d9ec)
+        ;
+
+        
+    
+    
+            marker_435a9464871c76ce1268b1d7d5646f2a.bindTooltip(
+                `<div>
+                     Click for details: IMAGINE DRAGONS: LOOM World Tour - Baggage Storage
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_435a9464871c76ce1268b1d7d5646f2a.setIcon(icon_c1c9a3b5e029b8171d5f45b3f9d88f6e);
+            
+    
+            var marker_44925e7ce14a9b552271e38a3fa2cf11 = L.marker(
+                [50.12905, 14.5268],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_95e6c6ddb4b2e0d4dfe763c4745007fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e30cd985527bbe04a03b00160f022c4c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4061eeb8185eae950914481a76810844 = $(`<div id="html_4061eeb8185eae950914481a76810844" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">IMAGINE DRAGONS: LOOM World Tour - Baggage Storage</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">June 11, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Úschovna - Letiště Letňany</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Prague, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1290, 14.5268</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-baggage-storage-tickets/51579?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_e30cd985527bbe04a03b00160f022c4c.setContent(html_4061eeb8185eae950914481a76810844);
+            
+        
+
+        marker_44925e7ce14a9b552271e38a3fa2cf11.bindPopup(popup_e30cd985527bbe04a03b00160f022c4c)
+        ;
+
+        
+    
+    
+            marker_44925e7ce14a9b552271e38a3fa2cf11.bindTooltip(
+                `<div>
+                     Click for details: IMAGINE DRAGONS: LOOM World Tour - Baggage Storage
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44925e7ce14a9b552271e38a3fa2cf11.setIcon(icon_95e6c6ddb4b2e0d4dfe763c4745007fc);
+            
+    
+            var marker_0955117ea94eb7019992e4657cc1f5fe = L.marker(
+                [50.1279, 14.51512],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_d90f952a909c13aa7efab4a8084afc51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecc210042cdb3e0c006f306ebe64bdf1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f1443d606e75e255d4452c44dbc03bb3 = $(`<div id="html_f1443d606e75e255d4452c44dbc03bb3" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">IMAGINE DRAGONS: LOOM World Tour</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">June 09, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Letiště Praha Letňany</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1279, 14.5151</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-tickets/51645?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_ecc210042cdb3e0c006f306ebe64bdf1.setContent(html_f1443d606e75e255d4452c44dbc03bb3);
+            
+        
+
+        marker_0955117ea94eb7019992e4657cc1f5fe.bindPopup(popup_ecc210042cdb3e0c006f306ebe64bdf1)
+        ;
+
+        
+    
+    
+            marker_0955117ea94eb7019992e4657cc1f5fe.bindTooltip(
+                `<div>
+                     Click for details: IMAGINE DRAGONS: LOOM World Tour
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0955117ea94eb7019992e4657cc1f5fe.setIcon(icon_d90f952a909c13aa7efab4a8084afc51);
+            
+    
+            var marker_3d7145b19a5be2df94d497d56ae01469 = L.marker(
+                [50.1279, 14.51512],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_79f8eb7786db9aab24e3b64bcc507758 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e18e96789b3aff1443b23ce8670253c5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_53f9dc23a427771328f67c47c9f0b8e7 = $(`<div id="html_53f9dc23a427771328f67c47c9f0b8e7" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">IMAGINE DRAGONS: LOOM World Tour</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">June 11, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Letiště Praha Letňany</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1279, 14.5151</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/imagine-dragons-loom-world-tour-tickets/51647?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_e18e96789b3aff1443b23ce8670253c5.setContent(html_53f9dc23a427771328f67c47c9f0b8e7);
+            
+        
+
+        marker_3d7145b19a5be2df94d497d56ae01469.bindPopup(popup_e18e96789b3aff1443b23ce8670253c5)
+        ;
+
+        
+    
+    
+            marker_3d7145b19a5be2df94d497d56ae01469.bindTooltip(
+                `<div>
+                     Click for details: IMAGINE DRAGONS: LOOM World Tour
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d7145b19a5be2df94d497d56ae01469.setIcon(icon_79f8eb7786db9aab24e3b64bcc507758);
+            
+    
+            var marker_a564b7887d80509975c822851308d8c4 = L.marker(
+                [50.09143, 14.45481],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_f55cfd0e4d12c45ad405c97a1585f28e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e6305e4a8340130d1619eae0bb386c1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_60b9161fe84228810168aef12983a83d = $(`<div id="html_60b9161fe84228810168aef12983a83d" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">ONE OK ROCK - DETOX EUROPEAN TOUR 2025</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">October 29, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Forum Karlín</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 8, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.0914, 14.4548</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/one-ok-rock-detox-european-tour-2025-tickets/1673302314?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_0e6305e4a8340130d1619eae0bb386c1.setContent(html_60b9161fe84228810168aef12983a83d);
+            
+        
+
+        marker_a564b7887d80509975c822851308d8c4.bindPopup(popup_0e6305e4a8340130d1619eae0bb386c1)
+        ;
+
+        
+    
+    
+            marker_a564b7887d80509975c822851308d8c4.bindTooltip(
+                `<div>
+                     Click for details: ONE OK ROCK - DETOX EUROPEAN TOUR 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a564b7887d80509975c822851308d8c4.setIcon(icon_f55cfd0e4d12c45ad405c97a1585f28e);
+            
+    
+            var marker_6fece2a9a65ee7d40fcf1804a19302f0 = L.marker(
+                [50.09143, 14.45481],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_09e7de3ccfd15040cdcdf2ec66bce71f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac29fcc5f6c0420e7fc3021a61669d79 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0c1365cbe810e65aab5c980d423046f3 = $(`<div id="html_0c1365cbe810e65aab5c980d423046f3" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">FOREVER - The Best Show about KING OF POP</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">November 28, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Forum Karlín</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 8, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.0914, 14.4548</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/forever-the-best-show-about-king-of-pop-tickets/1059593672?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_ac29fcc5f6c0420e7fc3021a61669d79.setContent(html_0c1365cbe810e65aab5c980d423046f3);
+            
+        
+
+        marker_6fece2a9a65ee7d40fcf1804a19302f0.bindPopup(popup_ac29fcc5f6c0420e7fc3021a61669d79)
+        ;
+
+        
+    
+    
+            marker_6fece2a9a65ee7d40fcf1804a19302f0.bindTooltip(
+                `<div>
+                     Click for details: FOREVER - The Best Show about KING OF POP
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fece2a9a65ee7d40fcf1804a19302f0.setIcon(icon_09e7de3ccfd15040cdcdf2ec66bce71f);
+            
+    
+            var marker_84ff9c23793af277dabf1c82cc97ad99 = L.marker(
+                [50.24731, 15.83717],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_bf645d95785c85060e36ead5558dc176 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bbe5deee87cadb2b8b67784f4ba241c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_56ff9c4cbc1d99446efef7a457fa47fb = $(`<div id="html_56ff9c4cbc1d99446efef7a457fa47fb" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">Rock for People 2025 (11. - 15. 6. 2025)</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">June 11, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Park 360</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Hradec Králové, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.2473, 15.8372</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/rock-for-people-2025-11-15-6-2025--tickets/294722450?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_9bbe5deee87cadb2b8b67784f4ba241c.setContent(html_56ff9c4cbc1d99446efef7a457fa47fb);
+            
+        
+
+        marker_84ff9c23793af277dabf1c82cc97ad99.bindPopup(popup_9bbe5deee87cadb2b8b67784f4ba241c)
+        ;
+
+        
+    
+    
+            marker_84ff9c23793af277dabf1c82cc97ad99.bindTooltip(
+                `<div>
+                     Click for details: Rock for People 2025 (11. - 15. 6. 2025)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_84ff9c23793af277dabf1c82cc97ad99.setIcon(icon_bf645d95785c85060e36ead5558dc176);
+            
+    
+            var marker_33f42299f67572e8aa30f1251c6746a8 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_5d8c870d2e3b251faf63cca2c7ae8b4f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_482a382aad21469d068d36d5b3dee9e1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5ef726dc4e51ef72cb716f3480af684d = $(`<div id="html_5ef726dc4e51ef72cb716f3480af684d" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK 2025 - THURSDAY 10. 7. 2025</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 10, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-thursday-10-7-2025-tickets/661327157?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_482a382aad21469d068d36d5b3dee9e1.setContent(html_5ef726dc4e51ef72cb716f3480af684d);
+            
+        
+
+        marker_33f42299f67572e8aa30f1251c6746a8.bindPopup(popup_482a382aad21469d068d36d5b3dee9e1)
+        ;
+
+        
+    
+    
+            marker_33f42299f67572e8aa30f1251c6746a8.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK 2025 - THURSDAY 10. 7. 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33f42299f67572e8aa30f1251c6746a8.setIcon(icon_5d8c870d2e3b251faf63cca2c7ae8b4f);
+            
+    
+            var marker_0b5a18caf72937815cda0c4aaedbc37c = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_fa38904eb55a05ac04455377a3c948d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c252236a331a62f764f7b4e293a2b435 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a779584fb4ac5f2dadc0112911feb675 = $(`<div id="html_a779584fb4ac5f2dadc0112911feb675" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK 2025 - FRIDAY 11. 7. 2025</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 11, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-friday-11-7-2025-tickets/356137205?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_c252236a331a62f764f7b4e293a2b435.setContent(html_a779584fb4ac5f2dadc0112911feb675);
+            
+        
+
+        marker_0b5a18caf72937815cda0c4aaedbc37c.bindPopup(popup_c252236a331a62f764f7b4e293a2b435)
+        ;
+
+        
+    
+    
+            marker_0b5a18caf72937815cda0c4aaedbc37c.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK 2025 - FRIDAY 11. 7. 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b5a18caf72937815cda0c4aaedbc37c.setIcon(icon_fa38904eb55a05ac04455377a3c948d3);
+            
+    
+            var marker_fdef29510c10755ceb81b784951743b6 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_ac512fede51cff665f7afe0aecb8bc35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deec1c14700e556e696f359971bbd643 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_26cc7d28010995a600a19fb5e3d19357 = $(`<div id="html_26cc7d28010995a600a19fb5e3d19357" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK 2025 - SATURDAY 12. 7. 2025</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 12, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-saturday-12-7-2025-tickets/2099111542?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_deec1c14700e556e696f359971bbd643.setContent(html_26cc7d28010995a600a19fb5e3d19357);
+            
+        
+
+        marker_fdef29510c10755ceb81b784951743b6.bindPopup(popup_deec1c14700e556e696f359971bbd643)
+        ;
+
+        
+    
+    
+            marker_fdef29510c10755ceb81b784951743b6.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK 2025 - SATURDAY 12. 7. 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fdef29510c10755ceb81b784951743b6.setIcon(icon_ac512fede51cff665f7afe0aecb8bc35);
+            
+    
+            var marker_5105f3343207b8af36302369911af8fd = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_ba884c6c75e1330ed21c32f9fbc9fd8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f189ccf756d9390f0cab3c887b986df = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_7f8e33ff0c8090874546e15f3df8c693 = $(`<div id="html_7f8e33ff0c8090874546e15f3df8c693" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK 2025 - SUNDAY 13. 7. 2025</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 13, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-2025-sunday-13-7-2025-tickets/619443915?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_5f189ccf756d9390f0cab3c887b986df.setContent(html_7f8e33ff0c8090874546e15f3df8c693);
+            
+        
+
+        marker_5105f3343207b8af36302369911af8fd.bindPopup(popup_5f189ccf756d9390f0cab3c887b986df)
+        ;
+
+        
+    
+    
+            marker_5105f3343207b8af36302369911af8fd.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK 2025 - SUNDAY 13. 7. 2025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5105f3343207b8af36302369911af8fd.setIcon(icon_ba884c6c75e1330ed21c32f9fbc9fd8d);
+            
+    
+            var marker_0683b2ff4cdc2c3be065d5e50ec98c33 = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_d4b041d33187e04e5d99475ca8c739b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2537c09089fb3aae2a56fcf8c52ba3fc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ac7cbbbe029710fbe2efa6e5f1eb4846 = $(`<div id="html_ac7cbbbe029710fbe2efa6e5f1eb4846" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 13, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-10-7-13-7-2025-festival-pass-tickets/1443315857?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_2537c09089fb3aae2a56fcf8c52ba3fc.setContent(html_ac7cbbbe029710fbe2efa6e5f1eb4846);
+            
+        
+
+        marker_0683b2ff4cdc2c3be065d5e50ec98c33.bindPopup(popup_2537c09089fb3aae2a56fcf8c52ba3fc)
+        ;
+
+        
+    
+    
+            marker_0683b2ff4cdc2c3be065d5e50ec98c33.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0683b2ff4cdc2c3be065d5e50ec98c33.setIcon(icon_d4b041d33187e04e5d99475ca8c739b0);
+            
+    
+            var marker_f66ae1e8b9e04642f8c1c3289d3ec58b = L.marker(
+                [49.21525, 17.8385],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_346ec5a26d9eaa20b0d2d8396ab8ed31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86c4694b97b3d1b0a2cb8c4d047c4957 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ca90a4e2dfbdf16b82a9d805b278a9e1 = $(`<div id="html_ca90a4e2dfbdf16b82a9d805b278a9e1" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass - SEATING</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">July 13, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> likérka R.Jelínka</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Vizovice, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 49.2152, 17.8385</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/masters-of-rock-10-7-13-7-2025-festival-pass-seating-tickets/1132177842?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_86c4694b97b3d1b0a2cb8c4d047c4957.setContent(html_ca90a4e2dfbdf16b82a9d805b278a9e1);
+            
+        
+
+        marker_f66ae1e8b9e04642f8c1c3289d3ec58b.bindPopup(popup_86c4694b97b3d1b0a2cb8c4d047c4957)
+        ;
+
+        
+    
+    
+            marker_f66ae1e8b9e04642f8c1c3289d3ec58b.bindTooltip(
+                `<div>
+                     Click for details: MASTERS OF ROCK (10. 7. - 13. 7. 2025) Festival Pass - SEATING
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f66ae1e8b9e04642f8c1c3289d3ec58b.setIcon(icon_346ec5a26d9eaa20b0d2d8396ab8ed31);
+            
+    
+            var marker_1624d8c1ca9235271273422a3c21cb5c = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_16b531ee6e7e85a1e4098b380545ac25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5a182e3f3c7f1090042f3b3973af1bd = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5a7bb2f56da25f14300756ee342fbeb9 = $(`<div id="html_5a7bb2f56da25f14300756ee342fbeb9" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">Disturbed: The Sickness 25th Anniversary Tour</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">October 07, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> O2 Arena</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1048, 14.4938</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-tickets/1133673032?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_d5a182e3f3c7f1090042f3b3973af1bd.setContent(html_5a7bb2f56da25f14300756ee342fbeb9);
+            
+        
+
+        marker_1624d8c1ca9235271273422a3c21cb5c.bindPopup(popup_d5a182e3f3c7f1090042f3b3973af1bd)
+        ;
+
+        
+    
+    
+            marker_1624d8c1ca9235271273422a3c21cb5c.bindTooltip(
+                `<div>
+                     Click for details: Disturbed: The Sickness 25th Anniversary Tour
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1624d8c1ca9235271273422a3c21cb5c.setIcon(icon_16b531ee6e7e85a1e4098b380545ac25);
+            
+    
+            var marker_95bbc2cc549d180d13fabe4920891aab = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_320ce3da4b8a3a0c77f49daddc840638 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01a0605f139b9e7ae5488219c588d93c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e6c0ebcb5489b734ed76174f0714c6d8 = $(`<div id="html_e6c0ebcb5489b734ed76174f0714c6d8" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">Disturbed: The Sickness 25th Anniversary Tour | Enhanced Experiences</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">October 07, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> O2 Arena</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1048, 14.4938</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-%7C-enhanced-experiences-tickets/1502218305?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_01a0605f139b9e7ae5488219c588d93c.setContent(html_e6c0ebcb5489b734ed76174f0714c6d8);
+            
+        
+
+        marker_95bbc2cc549d180d13fabe4920891aab.bindPopup(popup_01a0605f139b9e7ae5488219c588d93c)
+        ;
+
+        
+    
+    
+            marker_95bbc2cc549d180d13fabe4920891aab.bindTooltip(
+                `<div>
+                     Click for details: Disturbed: The Sickness 25th Anniversary Tour | Enhanced Experiences
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95bbc2cc549d180d13fabe4920891aab.setIcon(icon_320ce3da4b8a3a0c77f49daddc840638);
+            
+    
+            var marker_8f4e23020eca504a73e7f3805e36e6f6 = L.marker(
+                [50.10479, 14.49377],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_d1ef12808ff0b1f98c7824bdc44af223 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_91ee6c900bee76665aac5c3da8e1b6cf = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ceafdd3e76a40a38c653d579a85bcdac = $(`<div id="html_ceafdd3e76a40a38c653d579a85bcdac" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">Disturbed: The Sickness 25th Anniversary Tour | Megadeth Packages</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">October 07, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> O2 Arena</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 9, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.1048, 14.4938</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/disturbed-the-sickness-25th-anniversary-tour-%7C-megadeth-packages-tickets/1882232376?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_91ee6c900bee76665aac5c3da8e1b6cf.setContent(html_ceafdd3e76a40a38c653d579a85bcdac);
+            
+        
+
+        marker_8f4e23020eca504a73e7f3805e36e6f6.bindPopup(popup_91ee6c900bee76665aac5c3da8e1b6cf)
+        ;
+
+        
+    
+    
+            marker_8f4e23020eca504a73e7f3805e36e6f6.bindTooltip(
+                `<div>
+                     Click for details: Disturbed: The Sickness 25th Anniversary Tour | Megadeth Packages
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8f4e23020eca504a73e7f3805e36e6f6.setIcon(icon_d1ef12808ff0b1f98c7824bdc44af223);
+            
+    
+            var marker_a6439ad857ae547acabc3e4b932aaf18 = L.marker(
+                [50.08195, 14.41848],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_93297aeae11ffcc156e9870d41c0cca4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_686cde9ba88e6f268823924f78aed5e8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3b4ef2bcccf42dd3417869cd90005335 = $(`<div id="html_3b4ef2bcccf42dd3417869cd90005335" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">ROYA</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">November 20, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Rock Café</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.0819, 14.4185</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/roya-tickets/287961223?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_686cde9ba88e6f268823924f78aed5e8.setContent(html_3b4ef2bcccf42dd3417869cd90005335);
+            
+        
+
+        marker_a6439ad857ae547acabc3e4b932aaf18.bindPopup(popup_686cde9ba88e6f268823924f78aed5e8)
+        ;
+
+        
+    
+    
+            marker_a6439ad857ae547acabc3e4b932aaf18.bindTooltip(
+                `<div>
+                     Click for details: ROYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6439ad857ae547acabc3e4b932aaf18.setIcon(icon_93297aeae11ffcc156e9870d41c0cca4);
+            
+    
+            var marker_d1c4a6164d7d28fd9308a1ef2c563925 = L.marker(
+                [50.08195, 14.41848],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_9387e12b97441bfd0a84d45e91989d75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f899e1cfafa616737218bc64eff5f15 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_71f3755664de7201e879d751edef6dc9 = $(`<div id="html_71f3755664de7201e879d751edef6dc9" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">MICO</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">November 29, 2025</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Rock Café</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.0819, 14.4185</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/mico-tickets/117198320?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_5f899e1cfafa616737218bc64eff5f15.setContent(html_71f3755664de7201e879d751edef6dc9);
+            
+        
+
+        marker_d1c4a6164d7d28fd9308a1ef2c563925.bindPopup(popup_5f899e1cfafa616737218bc64eff5f15)
+        ;
+
+        
+    
+    
+            marker_d1c4a6164d7d28fd9308a1ef2c563925.bindTooltip(
+                `<div>
+                     Click for details: MICO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d1c4a6164d7d28fd9308a1ef2c563925.setIcon(icon_9387e12b97441bfd0a84d45e91989d75);
+            
+    
+            var marker_ef07398799469cbb4223fa0ac361d143 = L.marker(
+                [50.0814, 14.42528],
+                {
+}
+            ).addTo(marker_cluster_355c53c616129ac9d12b711e1bc8dadd);
+        
+    
+            var icon_598fdcca6c8011394bef775de262ca3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "calendar",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee981d75ec8911aca0f8eb6b33bd8f02 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_23df958ebadfe29ccb1887ce04363713 = $(`<div id="html_23df958ebadfe29ccb1887ce04363713" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);                          color: white; padding: 15px; margin: -10px -10px 10px -10px;                          border-radius: 8px 8px 0 0;">                 <h3 style="margin: 0; font-size: 18px;">Blossoms</h3>             </div>             <div style="padding: 10px;">                 <p style="margin: 8px 0;"><strong>📅 Date:</strong> <span style="color: #2E86C1;">February 06, 2026</span></p>                 <p style="margin: 8px 0;"><strong>📍 Venue:</strong> Lucerna Music Bar</p>                 <p style="margin: 8px 0;"><strong>🏙️ Location:</strong> Praha 1, Czech Republic</p>                 <p style="margin: 8px 0;"><strong>🌍 Coordinates:</strong> 50.0814, 14.4253</p>                 <div style="text-align: center; margin-top: 15px;"><a href="https://www.ticketmaster.cz/event/blossoms-tickets/2080354066?language=en-us" target="_blank" style="background: #E74C3C; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">🎫 Buy Tickets</a></div>             </div>         </div>         </div>`)[0];
+                popup_ee981d75ec8911aca0f8eb6b33bd8f02.setContent(html_23df958ebadfe29ccb1887ce04363713);
+            
+        
+
+        marker_ef07398799469cbb4223fa0ac361d143.bindPopup(popup_ee981d75ec8911aca0f8eb6b33bd8f02)
+        ;
+
+        
+    
+    
+            marker_ef07398799469cbb4223fa0ac361d143.bindTooltip(
+                `<div>
+                     Click for details: Blossoms
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef07398799469cbb4223fa0ac361d143.setIcon(icon_598fdcca6c8011394bef775de262ca3d);
+            
+    
+            marker_cluster_355c53c616129ac9d12b711e1bc8dadd.addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+        
+    
+            var layer_control_394e151bae2fadd2309307b6de8880ab_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_0e8d333a7dd7b57ab39937e8f508abd4,
+                    "Stamen Terrain" : tile_layer_fc1648421d430dd3c2913cbc47af4ff3,
+                    "CartoDB Positron" : tile_layer_4ee2ec17a5050e3e4fa12bc3aea01709,
+                },
+                overlays :  {
+                    "macro_element_355c53c616129ac9d12b711e1bc8dadd" : marker_cluster_355c53c616129ac9d12b711e1bc8dadd,
+                },
+            };
+            let layer_control_394e151bae2fadd2309307b6de8880ab = L.control.layers(
+                layer_control_394e151bae2fadd2309307b6de8880ab_layers.base_layers,
+                layer_control_394e151bae2fadd2309307b6de8880ab_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_f7679ba877d4dab597da57d17e7a7b9a);
+        
+</script>
+</html>
