@@ -60,7 +60,7 @@ def get_events(
     include_spellcheck: str = "no",
     
     # Pagination and sorting
-    size: int = 20,  # Max events per page (max 200)
+    size: int = 200,  # Max events per page (max 200)
     page: int = 0,  # Page number
     sort: str = "relevance,desc",  # Sorting options
     

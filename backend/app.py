@@ -5,6 +5,13 @@ from datetime import datetime, timedelta
 import pytz
 from events_api import get_events as get_events_api
 from events_api import transform_event_simple, extract_venue_info, extract_classifications
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -53,10 +60,13 @@ def get_events_upcoming():
     # Get query parameters with defaults
     city = request.args.get('city', 'Prague')
     country_code = request.args.get('country', 'CZ')
-    days_ahead = int(request.args.get('days_ahead', 90))  # Default 3 months ahead
-    classification = request.args.get('classification', 'music,sports')  # Can be comma-separated
+    days_ahead = int(request.args.get('days_ahead', 90))
+    classification = request.args.get('classification', 'music,sports')
     size = int(request.args.get('size', 50))
     keyword = request.args.get('keyword', None)
+    
+    # Log request parameters
+    logger.info(f"📍 Events request received - City: {city}, Country: {country_code}, Days ahead: {days_ahead}")
     
     # Calculate current date and future date
     now = datetime.now(pytz.UTC)
@@ -76,23 +86,26 @@ def get_events_upcoming():
             city=city,
             classification_name=classification_list,
             keyword=keyword,
-            start_date_time=start_date_time,  # From now
-            end_date_time=end_date_time,      # Until future date
-            size=min(size, 200),              # Max per page
-            sort="date,asc",                  # Sort by date ascending
-            locale="cs",                      # Czech language
-            include_tba="no",                 # Exclude "To Be Announced"
-            include_tbd="no",                 # Exclude "To Be Determined"
-            save_to_file=False                # Don't save to file for API calls
+            start_date_time=start_date_time,
+            end_date_time=end_date_time,
+            size=min(size, 200),
+            sort="date,asc",
+            locale="cs",
+            include_tba="no",
+            include_tbd="no",
+            save_to_file=False
         )
         
         # Extract events from API response
         events_data = api_response.get('_embedded', {}).get('events', [])
         page_info = api_response.get('page', {})
         
-        # Transform events data for frontend (optional - customize as needed)
+        # Log raw events count
+        logger.info(f"🎫 Received {len(events_data)} events from Ticketmaster API")
+        
+        # Transform events data for frontend
         transformed_events = []
-        for event in events_data:
+        for idx, event in enumerate(events_data):
             transformed_event = {
                 'id': event.get('id'),
                 'name': event.get('name'),
@@ -110,6 +123,22 @@ def get_events_upcoming():
                 'please_note': event.get('pleaseNote')
             }
             transformed_events.append(transformed_event)
+            
+            # Log each event details
+            venue_name = transformed_event['venue'].get('name', 'Unknown venue') if transformed_event['venue'] else 'No venue'
+            venue_city = transformed_event['venue'].get('city', 'Unknown city') if transformed_event['venue'] else 'No city'
+            
+            logger.info(f"  Event {idx + 1}: '{transformed_event['name']}' at {venue_name}, {venue_city} on {transformed_event['date']}")
+        
+        # Summary logging
+        logger.info(f"✅ Successfully transformed {len(transformed_events)} events")
+        logger.info(f"📊 Total events available: {page_info.get('totalElements', 0)} across {page_info.get('totalPages', 0)} pages")
+        
+        # Log first 5 event names for quick reference
+        if transformed_events:
+            logger.info("🎭 First few events:")
+            for i, event in enumerate(transformed_events[:5]):
+                logger.info(f"   {i+1}. {event['name']}")
         
         return jsonify({
             "events": transformed_events,
@@ -135,6 +164,7 @@ def get_events_upcoming():
         })
         
     except Exception as e:
+        logger.error(f"❌ Error fetching events: {str(e)}")
         return jsonify({
             "error": str(e),
             "status": "error",
