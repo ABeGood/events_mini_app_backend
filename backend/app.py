@@ -82,9 +82,11 @@ def get_events_upcoming():
     try:
         # Call your Ticketmaster API function
         api_response = get_events_api(
-            country_code=country_code,
-            city=city,
-            classification_name=classification_list,
+            lat_long='50.0755,14.4378',  # Prague center coordinates
+            radius=25,  # 25km radius
+            # country_code=country_code,
+            # city=city,
+            # classification_name=classification_list,
             keyword=keyword,
             start_date_time=start_date_time,
             end_date_time=end_date_time,
