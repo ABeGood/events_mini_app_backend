@@ -175,7 +175,13 @@ def get_events_upcoming():
         events_data = db.execute_query(base_query)
         
         # Get column names for proper data mapping
-        columns_query = "PRAGMA table_info(events)"
+        columns_query = """
+            SELECT column_name 
+            FROM information_schema.columns 
+            WHERE table_name = 'events' 
+            AND table_schema = 'public'
+            ORDER BY ordinal_position
+        """
         column_info = db.execute_query(columns_query)
         column_names = [col[1] for col in column_info]  # col[1] is column name
         
