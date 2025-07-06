@@ -92,7 +92,7 @@ def get_events_upcoming():
             end_date_time=end_date_time,
             size=min(size, 200),
             sort="date,asc",
-            locale="cs",
+            # locale="cs",
             include_tba="no",
             include_tbd="no",
             save_to_file=False
