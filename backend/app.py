@@ -37,6 +37,58 @@ def health_check():
         "message": "Flask backend is running on Railway!"
     })
 
+
+@app.route('/api/load_data')
+def load_data():
+    try:
+        # Initialize database
+        db = create_database_api()
+        logger.info("🚀 Starting database population...")
+        
+        # List of cities to populate
+        cities_to_populate = [
+            {"city": "Prague", "country": "CZ", "days": 90},
+            {"city": "Berlin", "country": "DE", "days": 60},
+            {"city": "Vienna", "country": "AT", "days": 60},
+            {"city": "Munich", "country": "DE", "days": 45},
+            {"city": "Bratislava", "country": "SK", "days": 45}
+        ]
+        
+        total_events_loaded = 0
+        
+        for city_config in cities_to_populate:
+            logger.info(f"🏙️ Loading events for {city_config['city']}, {city_config['country']}")
+            
+            success = db.load_prg_data()
+            
+            if success:
+                logger.info(f"✅ Successfully loaded events for {city_config['city']}")
+                total_events_loaded += 1
+            else:
+                logger.error(f"❌ Failed to load events for {city_config['city']}")
+        
+        logger.info(f"🎉 Database population completed! Processed {total_events_loaded}/{len(cities_to_populate)} cities")
+        
+        # Get final count
+        events_df = db.get_table_data("events", limit=1)
+        if not events_df.empty:
+            total_count = db.execute_query("SELECT COUNT(*) FROM events")
+            if total_count:
+                logger.info(f"📊 Total events in database: {total_count[0][0]}")
+        
+        return jsonify({
+            "status": "SUCCESS!",
+            "message": f"📊 Total events in database: {total_count[0][0]}"
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Error during database population: {e}")
+        return jsonify({
+            "status": "Error",
+            "exception": e
+        })
+
+
 @app.route('/api/message', methods=['GET', 'OPTIONS'])  # ✅ Explicitly handle OPTIONS
 def get_message():
     """Main endpoint that returns a simple message"""
