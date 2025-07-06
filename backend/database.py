@@ -122,7 +122,9 @@ class PostgreSQLDatabaseAPI:
                 """))
                 
                 conn.execute(text("""
-                    DROP TRIGGER IF EXISTS update_events_updated_at ON events;
+                    DROP TRIGGER IF EXISTS update_events_updated_at ON events;"""))
+                
+                conn.execute(text("""
                     CREATE TRIGGER update_events_updated_at
                         BEFORE UPDATE ON events
                         FOR EACH ROW
