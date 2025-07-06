@@ -58,7 +58,7 @@ def get_events_upcoming():
     """Get upcoming events with flexible filtering"""
     
     # Get query parameters with defaults
-    city = request.args.get('city', 'Singapore')
+    city = request.args.get('city', 'Berlin')
     country_code = request.args.get('country', 'CZ')
     days_ahead = int(request.args.get('days_ahead', 90))
     classification = request.args.get('classification', 'music,sports')
