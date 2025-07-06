@@ -281,11 +281,11 @@ def get_events_upcoming():
         logger.info(f"✅ Successfully transformed {len(transformed_events)} events")
         logger.info(f"📊 Total events available: {total_events} across {total_pages} pages")
         
-        # Log first 5 event names for quick reference
-        if transformed_events:
-            logger.info("🎭 First few events:")
-            for i, event in enumerate(transformed_events[:5]):
-                logger.info(f"   {i+1}. {event['name']}")
+        # # Log first 5 event names for quick reference
+        # if transformed_events:
+        #     logger.info("🎭 First few events:")
+        #     for i, event in enumerate(transformed_events[:5]):
+        #         logger.info(f"   {i+1}. {event['name']}")
         
         # Return response in same format as before
         return jsonify({
