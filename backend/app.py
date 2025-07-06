@@ -58,7 +58,7 @@ def get_events_upcoming():
     """Get upcoming events with flexible filtering"""
     
     # Get query parameters with defaults
-    city = request.args.get('city', 'Prague')
+    city = request.args.get('city', 'Singapore')
     country_code = request.args.get('country', 'CZ')
     days_ahead = int(request.args.get('days_ahead', 90))
     classification = request.args.get('classification', 'music,sports')
@@ -82,10 +82,10 @@ def get_events_upcoming():
     try:
         # Call your Ticketmaster API function
         api_response = get_events_api(
-            lat_long='50.0755,14.4378',  # Prague center coordinates
-            radius=25,  # 25km radius
+            # lat_long='50.0755,14.4378',  # Prague center coordinates
+            # radius=25,  # 25km radius
             # country_code=country_code,
-            # city=city,
+            city=city,
             # classification_name=classification_list,
             keyword=keyword,
             start_date_time=start_date_time,
