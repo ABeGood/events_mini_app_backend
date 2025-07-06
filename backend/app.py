@@ -4,7 +4,6 @@ import os
 from datetime import datetime, timedelta
 import pytz
 import logging
-from backend.database import create_database_api
 import json
 from database import create_database_api
 db = create_database_api()
