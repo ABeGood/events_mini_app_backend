@@ -183,7 +183,7 @@ def get_events_upcoming():
             ORDER BY ordinal_position
         """
         column_info = db.execute_query(columns_query)
-        column_names = [col[1] for col in column_info]  # col[1] is column name
+        column_names = [col[0] for col in column_info]  # col[1] is column name
         
         # Convert query results to list of dictionaries
         events_list = []
