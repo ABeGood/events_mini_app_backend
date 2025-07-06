@@ -139,7 +139,6 @@ def get_events_upcoming():
         # Build SQL query with filters
         base_query = """
             SELECT * FROM events 
-            WHERE date >= ? AND date <= ?
         """
         # params = [start_date, end_date]
         
