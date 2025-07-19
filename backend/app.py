@@ -6,6 +6,7 @@ import pytz
 import logging
 import json
 from database import create_database_api
+from json_encoder import CustomJSONProvider
 db = create_database_api()
 
 logging.basicConfig(
@@ -15,6 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.json = CustomJSONProvider(app)
 
 # Configure CORS for Telegram domains
 CORS(app, origins=[
