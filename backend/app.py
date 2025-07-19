@@ -199,20 +199,9 @@ def get_events_upcoming():
         transformed_events = []
         for idx, event in enumerate(events_list):
             # Parse JSON fields
-            try:
-                price_ranges = json.loads(event.get('price_ranges', '[]')) if event.get('price_ranges') else []
-            except:
-                price_ranges = []
-            
-            try:
-                images = json.loads(event.get('images', '[]')) if event.get('images') else []
-            except:
-                images = []
-            
-            try:
-                venue_location = json.loads(event.get('venue_location', '{}')) if event.get('venue_location') else {}
-            except:
-                venue_location = {}
+            price_ranges = event.get('price_ranges', [])
+            images = event.get('images', [])
+            venue_location = event.get('venue_location', {})
             
             # Reconstruct venue info object
             venue_info = None
